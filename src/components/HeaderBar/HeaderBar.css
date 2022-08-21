@@ -1,0 +1,25 @@
+@font-face {
+    font-family: GameOfSquid;
+    src: url("../../assets/fonts/gameofsquid.otf");
+}
+
+.HBar {
+    color: #fbcd16;
+    display: inline-block;
+    text-transform: lowercase;
+    margin: 1px;
+    font-family: GameOfSquid;
+    transition-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.HBar:hover {
+    color: #fbcd16c4;
+    transition-duration: 0.2s;
+}
+
+.HBarBG {
+    color: #282c34;
+    background-color: #24282e;
+    height: 60px;
+}
