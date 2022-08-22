@@ -2,37 +2,42 @@
   text-align: center;
 }
 
-.App-header {
-  background: fixed;
-  min-height: 60px;
-  background-color: #282c34;
-  position:sticky;
-  text-align: right;
-}
-
-.Header-title {
-  background-color: red;
-  margin-right: 1em;
-}
-
 .App-body {
-  background-image: url('../src/assets/images/background.png');
-
-  background-color: #282c34;
-  background-repeat: no-repeat;
-  background-attachment:scroll;
-  /* scroll|fixed|local|initial|inherit; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
 
+.Animated-bg {
+  background-image: url('../src/assets/images/backgroundAnim.png');
+  animation: bg-pan-right 5s infinite alternate;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  min-height: 100vh;
+  /* scroll|fixed|local|initial|inherit; */
+}
+
+.Static-bg {
+  background-image: url('../src/assets/images/backgroundTransparent.png');
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.Background-stack {
+  display: grid;
+}
+
+.Background-stack>* {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
 .bg-pan-right {
-	-webkit-animation: bg-pan-right 6s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-	        animation: bg-pan-right 6s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+  -webkit-animation: bg-pan-right 6s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+  animation: bg-pan-right 6s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
 }
 
 /* ----------------------------------------------
@@ -47,18 +52,21 @@
  * animation bg-pan-right
  * ----------------------------------------
  */
- @-webkit-keyframes bg-pan-right {
+@-webkit-keyframes bg-pan-right {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 100% 50%;
   }
 }
+
 @keyframes bg-pan-right {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 100% 50%;
   }

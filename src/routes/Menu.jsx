@@ -3,6 +3,8 @@ import Button from '../components/Button/Button'
 import { useNavigate } from 'react-router-dom';
 import './Menu.css'
 import HelpModalJSON from '../assets/HelpModal.json';
+import { useDispatch, useSelector } from 'react-redux';
+import { setModulePicked } from '../store/actions';
 var client = MainMQTT();
 
 
@@ -10,6 +12,13 @@ function Menu() {
     const navigate = useNavigate();
     var title = [];
     var text = [];
+    const modulePicked = useSelector(state => state.modulePicked);
+
+    // const dispatch = useDispatch();
+    // const setNewOverlayColor = (newOverlayColor) => dispatch(setGlobalSettings(newOverlayColor, false));
+    // console.log(modulePicked);
+    const dispatch = useDispatch();
+    const pickNewModule = () => dispatch(setModulePicked('DNS_MOD'));
 
     HelpModalJSON.forEach(modalData => { // Destructuring JSON used for titles and texts for help modals in Menu
         title[modalData.index] = modalData.title;
@@ -20,10 +29,12 @@ function Menu() {
     const PSMClicked = () => {
         client.publish('testMQTT', 'turnOn');
         navigate("/passive-sniffing-mod");
+        console.log(modulePicked);
     }
 
     const DNSModClicked = () => {
         client.publish('testMQTT', 'turnOn');
+        pickNewModule();
         navigate("/dnsmod");
     }
 
@@ -71,5 +82,6 @@ function Menu() {
         </>
     );
 }
+
 
 export default Menu;
