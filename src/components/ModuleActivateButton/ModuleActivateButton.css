@@ -1,0 +1,73 @@
+.ModuleActivateButton {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #fbcd16;
+    border-width: 30px;
+    transition-duration: 0.5s;
+    background: rgba(251, 205, 22, 1);
+    box-shadow: 5px 10px rgb(39, 39, 46);
+
+}
+
+.ModuleActivateButton:hover {
+    background: #d6af13;
+    border-radius: 50%;
+    border-color: black;
+    border-width: 33px;
+    border-style: double;
+    transition-duration: 0.5s;
+}
+
+.textButton-active {
+    font-size: 40px;
+    text-align: center;
+    font-family: GoodTimes;
+    background: linear-gradient(to right, red 20%, black 40%, red 60%, black 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s linear infinite;
+}
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+.textButton {
+    font-family: GoodTimes;
+    font-size: 22px;
+}
+
+.ModuleActivateButton-active {
+    height: 17em;
+    width: 17em;
+    border-radius: 50%;
+    border-style: ridge;
+    border-color: black;
+    border-width: 22px;
+    background: black;
+    box-shadow: 5px 10px rgb(39, 39, 46);
+    transition-duration: 1.5s;
+}
+.ModuleActivateButton-active:hover {
+    height: 17em;
+    width: 17em;
+    border-radius: 50%;
+    border-style: ridge;
+    border-color: black;
+    border-width: 22px;
+    background: #fbcd16;
+    box-shadow: 5px 10px rgb(39, 39, 46);
+    transition-duration: 1.5s;
+}
+
+@font-face {
+    font-family: GoodTimes;
+    src: url("../../assets/fonts/goodtimes.otf");
+}

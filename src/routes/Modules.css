@@ -1,0 +1,32 @@
+@font-face {
+    font-family: GoodTimes;
+    src: url("../assets/fonts/goodtimes.otf");
+}
+
+.HeaderText {
+    font-family: GoodTimes;
+    background: #fbcd16;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    width: auto;
+    padding: 30px;
+    border-radius: 60px;
+    margin-bottom: 1em;
+    position: sticky;
+}
+
+.Module {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}

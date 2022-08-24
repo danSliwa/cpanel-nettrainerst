@@ -6,6 +6,11 @@
     },
     {
         "index": 1,
+        "title": "ARP Mod",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis cras sed felis eget velit. Pulvinar sapien et ligula ullamcorper malesuada proin. Massa placerat duis ultricies lacus sed turpis. Justo laoreet sit amet cursus sit amet. Nisl nunc mi ipsum faucibus vitae aliquet nec. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Purus in mollis nunc sed. Vitae congue eu consequat ac felis donec et odio pellentesque. Feugiat in ante metus dictum at tempor commodo. Neque gravida in fermentum et sollicitudin."
+    },
+    {
+        "index": 1,
         "title": "DNS Mod",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis cras sed felis eget velit. Pulvinar sapien et ligula ullamcorper malesuada proin. Massa placerat duis ultricies lacus sed turpis. Justo laoreet sit amet cursus sit amet. Nisl nunc mi ipsum faucibus vitae aliquet nec. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Purus in mollis nunc sed. Vitae congue eu consequat ac felis donec et odio pellentesque. Feugiat in ante metus dictum at tempor commodo. Neque gravida in fermentum et sollicitudin."
     },
@@ -37,6 +42,6 @@
     {
         "index": 7,
         "title": "Reset To Default",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis cras sed felis eget velit. Pulvinar sapien et ligula ullamcorper malesuada proin. Massa placerat duis ultricies lacus sed turpis. Justo laoreet sit amet cursus sit amet. Nisl nunc mi ipsum faucibus vitae aliquet nec. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Purus in mollis nunc sed. Vitae congue eu consequat ac felis donec et odio pellentesque. Feugiat in ante metus dictum at tempor commodo. Neque gravida in fermentum et sollicitudin."
+        "text": "Disables currently active module and restarts the main NET-TRAINER-ST program."
     }
 ]

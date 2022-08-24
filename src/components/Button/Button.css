@@ -3,6 +3,17 @@
     src: url("../../assets/fonts/goodtimes.otf");
 }
 
+.Text-disabled{
+    color: rgb(63, 63, 63);
+    margin: 1px;
+    transition-duration: 1s;
+}
+.Text{
+    color: black;
+    margin: 1px;
+    transition-duration: 1s;
+}
+
 .Button {
     margin-top: 5px;
     background-color: #fbcd16;
@@ -20,12 +31,30 @@
     cursor: pointer;
     margin: 5px;
     transition-duration: 1.36s;
-    
+}
+
+.Button-disabled {
+    margin-top: 5px;
+    background-color: gray;
+    color: black;
+    font-size: larger;
+    border-radius: 22px;
+    border-style: double;
+    border-color: transparent;
+    text-shadow: tomato;
+    text-shadow: 5px;
+    height: 60px;
+    width: 700px;
+    font-family: GoodTimes;
+    font-weight: 900;
+    cursor: pointer;
+    margin: 5px;
+    transition-duration: 1.36s;
 }
 
 .Button:hover {
     background-color: #fbcd16b9;
-    transition-duration: 0.36s;
+    transition-duration: 1.36s;
     border-color: black;
     height: 60px;
     width: 650px;
@@ -40,6 +69,7 @@
     font-weight: 900;
     cursor: pointer;
     margin: 5px;
+    transition-duration: 1s;
 }
 
 .HelpMark:hover {
@@ -50,4 +80,5 @@
     font-weight: 900;
     cursor: pointer;
     margin: 5px;
+    transition-duration: 1s;
 }

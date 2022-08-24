@@ -5,10 +5,11 @@ import ActivationAlert from "../components/ActivationAlert/ActivationAlert";
 import ModuleActivateButton from "../components/ModuleActivateButton/ModuleActivateButton";
 import './Modules.css'
 const modules = require('../store/ModuleOptions');
-function NetcatBD() {
+
+function ARPMod() {
     const [thisModuleIsSelected, setThisModuleIsSelected] = useState(false);
     const selectedModule = useSelector(state => state.modulePicked.modulePicked);
-    const module = modules.NETCAD_BD;
+    const module = modules.ARP_MOD;
 
     useEffect(() => {
         if (module === selectedModule) {
@@ -21,12 +22,13 @@ function NetcatBD() {
     return (
         <>
             <div className="Module">
-                <h1 className="HeaderText">NETCAT BD</h1>
+                <h1 className="HeaderText">ARP Mod</h1>
                 <ModuleActivateButton module={module} />
+
             </div>
             <ActivationAlert module={module} show={thisModuleIsSelected}></ActivationAlert>
         </>
     )
 }
 
-export default NetcatBD;
+export default ARPMod;

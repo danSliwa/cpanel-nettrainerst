@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.Header {
+  position: sticky;
+}
+
 .App-body {
   min-height: 100vh;
   display: flex;
@@ -12,7 +16,7 @@
 
 .Animated-bg {
   background-image: url('../src/assets/images/backgroundAnim.png');
-  animation: bg-pan-right 5s infinite alternate;
+  animation: bg-pan-right 2s infinite alternate;
   background-repeat: no-repeat;
   background-attachment: scroll;
   min-height: 100vh;
@@ -38,6 +42,39 @@
 .bg-pan-right {
   -webkit-animation: bg-pan-right 6s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
   animation: bg-pan-right 6s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+}
+
+.Terminal-icon {
+  color: black;
+  vertical-align:middle;
+}
+
+.Terminal-button {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: #fbcd16;
+  border-color: black;
+  padding: 5px;
+  margin: 19px;
+  top: 25em;
+  left: 53em;
+  transition-duration: 1.2s;
+}
+.Terminal-button:hover {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  border-radius: 5px;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: #ebc016be;
+  border-color: black;
+  padding: 5px;
+  margin: 19px;
+  top: 25em;
+  left: 53em;
+  transition-duration: 1.2s;
 }
 
 /* ----------------------------------------------
