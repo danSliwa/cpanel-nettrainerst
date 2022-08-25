@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Alert, Fade } from 'react-bootstrap'
+import { Alert } from 'react-bootstrap'
 import { useSelector } from 'react-redux';
 import './ActivationAlert.css'
 
@@ -14,7 +14,7 @@ function ActivationAlert(props) {
         } else {
             setShow(false)
         }
-    }, [module])
+    }, [module, props.module])
 
     return (
         <>
@@ -29,6 +29,7 @@ function ActivationAlert(props) {
                 >
                     Module activated: {props.module}!
                     To deactivate, click the button again.
+                    In order for module to work, restart NET-TRAINER_ST.
                 </Alert>
                 :
                 ''

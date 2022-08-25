@@ -6,7 +6,7 @@ import ModuleActivateButton from "../components/ModuleActivateButton/ModuleActiv
 import './Modules.css'
 const modules = require('../store/ModuleOptions');
 
-function DNSMasqMod() {
+function DNSMasqMod({ client }) {
     const [thisModuleIsSelected, setThisModuleIsSelected] = useState(false);
     const selectedModule = useSelector(state => state.modulePicked.modulePicked);
     const module = modules.DNS_MASQ_MOD;
@@ -22,7 +22,7 @@ function DNSMasqMod() {
         <>
             <div className="Module">
                 <h1 className="HeaderText">DNS MASQ MOD</h1>
-                <ModuleActivateButton module={module} />
+                <ModuleActivateButton module={module} client={client} />
             </div>
             <ActivationAlert module={module} show={thisModuleIsSelected}></ActivationAlert>
         </>

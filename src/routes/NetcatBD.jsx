@@ -5,7 +5,7 @@ import ActivationAlert from "../components/ActivationAlert/ActivationAlert";
 import ModuleActivateButton from "../components/ModuleActivateButton/ModuleActivateButton";
 import './Modules.css'
 const modules = require('../store/ModuleOptions');
-function NetcatBD() {
+function NetcatBD({ client }) {
     const [thisModuleIsSelected, setThisModuleIsSelected] = useState(false);
     const selectedModule = useSelector(state => state.modulePicked.modulePicked);
     const module = modules.NETCAD_BD;
@@ -22,7 +22,7 @@ function NetcatBD() {
         <>
             <div className="Module">
                 <h1 className="HeaderText">NETCAT BD</h1>
-                <ModuleActivateButton module={module} />
+                <ModuleActivateButton module={module} client={client} />
             </div>
             <ActivationAlert module={module} show={thisModuleIsSelected}></ActivationAlert>
         </>

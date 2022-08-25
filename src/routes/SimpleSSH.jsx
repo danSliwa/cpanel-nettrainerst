@@ -6,7 +6,7 @@ import ModuleActivateButton from "../components/ModuleActivateButton/ModuleActiv
 import './Modules.css'
 const modules = require('../store/ModuleOptions');
 
-function SimpleSSH() {
+function SimpleSSH({ client }) {
     const [thisModuleIsSelected, setThisModuleIsSelected] = useState(false);
     const selectedModule = useSelector(state => state.modulePicked.modulePicked);
     const module = modules.SIMPLE_SSH;
@@ -23,7 +23,7 @@ function SimpleSSH() {
         <>
             <div className="Module">
                 <h1 className="HeaderText">SIMPLE SSH</h1>
-                <ModuleActivateButton module={module} />
+                <ModuleActivateButton module={module} client={client} />
             </div>
             <ActivationAlert module={module} show={thisModuleIsSelected}></ActivationAlert>
         </>

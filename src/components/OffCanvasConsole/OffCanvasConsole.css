@@ -7,3 +7,11 @@
 .Offcanvas {
     height: 30em;
 }
+
+.command {
+    font-style: italic;
+    background-color: rgb(219, 219, 219);
+    border-radius: 30px;
+    width: 130px;
+    margin: 0 auto;
+}

@@ -6,7 +6,7 @@ import ModuleActivateButton from "../components/ModuleActivateButton/ModuleActiv
 import './Modules.css'
 const modules = require('../store/ModuleOptions');
 
-function ARPMod() {
+function ARPMod({ client }) {
     const [thisModuleIsSelected, setThisModuleIsSelected] = useState(false);
     const selectedModule = useSelector(state => state.modulePicked.modulePicked);
     const module = modules.ARP_MOD;
@@ -23,7 +23,7 @@ function ARPMod() {
         <>
             <div className="Module">
                 <h1 className="HeaderText">ARP Mod</h1>
-                <ModuleActivateButton module={module} />
+                <ModuleActivateButton module={module} client={client} />
 
             </div>
             <ActivationAlert module={module} show={thisModuleIsSelected}></ActivationAlert>

@@ -1,24 +1,25 @@
 import './OffCanvasConsole.css'
-
-import React, { useState } from 'react';
+import React from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import TerminalSim from '../TerminalSim/TerminalSim';
 
 
+function OffCanvasConsole({ show, setShow, log, client }) {
 
-function OffCanvasConsole(props) {
-  
-  const handleClose = () => props.setShow(false);
-
+  const handleClose = () => setShow(false);
   return (
     <>
-      <Offcanvas show={props.show} onHide={handleClose} placement='start' backdropClassName='Offcanvas'>
+      <Offcanvas show={show} onHide={handleClose} placement='start' backdropClassName='Offcanvas'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>NET-TRAINER-ST Terminal Mirror</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className='Offcanvas-body'>
-          WARNING! This terminal is a mirror! It doesn't act as actual terminal.
-          <TerminalSim {...props}/>
+          <div className='text'>
+            <p>WARNING! This terminal is a mirror! It doesn't act as actual terminal. For help, type in: </p>
+            <p className='command'>commands</p>
+          </div>
+
+          <TerminalSim log={log} client={client} />
         </Offcanvas.Body>
       </Offcanvas>
     </>

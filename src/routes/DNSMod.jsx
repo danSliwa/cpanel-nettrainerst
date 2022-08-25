@@ -6,11 +6,11 @@ import ModuleActivateButton from "../components/ModuleActivateButton/ModuleActiv
 import './Modules.css'
 const modules = require('../store/ModuleOptions');
 
-function DNSMod() {
+function DNSMod({ client }) {
     const module = modules.DNS_MOD;
     const [thisModuleIsSelected, setThisModuleIsSelected] = useState(false);
     const selectedModule = useSelector(state => state.modulePicked.modulePicked);
-    
+
     useEffect(() => {
         if (module === selectedModule) {
             setThisModuleIsSelected(true);
@@ -23,7 +23,7 @@ function DNSMod() {
         <>
             <div className="Module">
                 <h1 className="HeaderText">DNS MOD</h1>
-                <ModuleActivateButton module={module} />
+                <ModuleActivateButton module={module} client={client} />
             </div>
             <ActivationAlert module={module} show={thisModuleIsSelected}></ActivationAlert>
         </>

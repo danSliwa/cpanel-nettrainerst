@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MainMQTT from '../../core/MainMQTT';
 import { setModulePicked } from '../../store/actions';
 import mqttData from '../../assets/MQTT_Topics';
 import './ModuleActivateButton.css'
-
-var client = MainMQTT();
 
 function ModuleActivateButton(props) {
     // Function takes props.onClick additional function from /routes/ component folders and props.module
@@ -36,14 +33,14 @@ function ModuleActivateButton(props) {
 
         if (moduleActive) {
             pickNewModule('none');
-            client.publish(module, mqttData.RESET_TO_DEFAULT.turnOn);
+            props.client.publish(module, mqttData.RESET_TO_DEFAULT.turnOn);
             changeButtonActiveState();
         }
 
         if (modulePicked === 'none') {
             if (!(modulePicked === module)) {
                 pickNewModule(module);
-                client.publish(module, 'turnOn')
+                props.client.publish(module, 'turnOn')
                 changeButtonActiveState();
             }
         }

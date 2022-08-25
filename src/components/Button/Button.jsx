@@ -8,6 +8,7 @@ import './Button.css'
 const modules = require('../../store/ModuleOptions');
 
 function Button(props) {
+    // eslint-disable-next-line no-unused-vars
     const [clicked, setClicked] = useState(false);
     const [showHelp, setShowHelp] = useState(false);
     const [disableButton, setDisableButton] = useState(false);

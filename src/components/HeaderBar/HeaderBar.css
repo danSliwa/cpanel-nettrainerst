@@ -3,6 +3,12 @@
     src: url("../../assets/fonts/gameofsquid.otf");
 }
 
+@font-face {
+    font-family: AnitaSemiSquare;
+    src: url("../../assets/fonts/Anita.ttf");
+}
+
+
 .HBar {
     color: #fbcd16;
     display: inline-block;
@@ -25,4 +31,84 @@
     height: 60px;
     position: sticky;
     top: 0;
+}
+
+.Connection-status {
+    color: #fbcd16;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    top: 5px;
+    left: 30px;
+    display: flex;
+    width: 500px;
+    height: 40px;
+}
+
+.Connection-status-text-plain {
+    font-stretch: semi-condensed;
+    position: sticky;
+    flex: 0.8;
+    margin: auto;
+    font-family: AnitaSemiSquare;
+    margin-top: 18px;
+}
+
+.Connection-status-text-connected {
+    font-stretch: semi-condensed;
+    position: sticky;
+    flex: 0.8;
+    margin: auto;
+    font-family: AnitaSemiSquare;
+    margin-top: 18px;
+    animation: shine 6s linear infinite;
+    background: linear-gradient(to right, green 20%, #fbcd16 40%, green 60%, #fbcd16 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Connection-status-text-offline {
+    font-stretch: semi-condensed;
+    position: sticky;
+    flex: 0.8;
+    margin: auto;
+    font-family: AnitaSemiSquare;
+    margin-top: 18px;
+    animation: shine 6s linear infinite;
+    background: linear-gradient(to right, red 20%, black 40%, red 60%, black 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Connection-status-text-other {
+    font-stretch: semi-condensed;
+    position: sticky;
+    flex: 0.8;
+    margin: auto;
+    font-family: AnitaSemiSquare;
+    margin-top: 18px;
+    background: transparent;
+    background-size: 200% auto;
+    color: #fbcd16;
+    background-clip: text;
+}
+
+.textButton-active {
+    font-size: 40px;
+    text-align: center;
+    font-family: GoodTimes;
+
+
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }

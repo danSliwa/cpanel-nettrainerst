@@ -4,11 +4,10 @@ import './Menu.css'
 import HelpModalJSON from '../assets/HelpModal.json';
 const modules = require('../store/ModuleOptions');
 
-function Menu() {
+function Menu({client}) {
     const navigate = useNavigate();
     var title = [];
     var text = [];
-
     HelpModalJSON.forEach(modalData => { // Destructuring JSON used for titles and texts for help modals in Menu
         title[modalData.index] = modalData.title;
         text[modalData.index] = modalData.text;
