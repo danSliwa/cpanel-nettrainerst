@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ntstlogo from '../../assets/images/nettrainer_logo_64.png'
-import { setConnectionStatus } from '../../store/actions';
 import './HeaderBar.css'
 
 const statuses = {
@@ -32,20 +31,20 @@ const connectionTextClassPicker = (CONNECTION_STATUS) => {
   }
 }
 
+// ORIGINAL HEADER WITHOUT REDUX, DON'T EDIT
+
 function HeaderBar(props) {
-  const connectionStatus = useSelector(state => state.connectionStatus.connectionStatus);
-  const dispatch = useDispatch();
+  const [connectionStatus, setConnectionStatus] = useState(statuses.OFFLINE);
 
   const client = props.client;
   useEffect(() => {
-    const setConnStatus = (status) => dispatch(setConnectionStatus(status));
-    client.on('connect', () => setConnStatus(statuses.CONNECTED));
-    client.on('disconnect', () => setConnStatus(statuses.DISCONNECTED));
-    client.on('error', (error) => setConnStatus(statuses.ERROR + " " + error.toString()));
-    client.on('offline', () => setConnStatus(statuses.OFFLINE));
-    client.on('reconnect', () => setConnStatus(statuses.RECONNECT));
-    client.on('end', () => setConnStatus(statuses.END));
-  }, [client, dispatch]);
+    client.on('connect', () => setConnectionStatus(statuses.CONNECTED));
+    client.on('disconnect', () => setConnectionStatus(statuses.DISCONNECTED));
+    client.on('error', (error) => setConnectionStatus(statuses.ERROR + " " + error.toString()));
+    client.on('offline', () => setConnectionStatus(statuses.OFFLINE));
+    client.on('reconnect', () => setConnectionStatus(statuses.RECONNECT));
+    client.on('end', () => setConnectionStatus(statuses.END));
+  }, [client]);
 
   const currentModule = useSelector(state => state.modulePicked);
   return (
@@ -66,7 +65,7 @@ function HeaderBar(props) {
               style={{ marginTop: "10px", marginRight: "10px" }}
               className="d-inline-block align-top"
             />
-            <h1 className='HBar' onClick={() => { window.history.back(); }}> NET-TRAINER-ST</h1>
+            <h1 className='HBar' onClick={() => { window.history.back();}}> NET-TRAINER-ST</h1>
           </Navbar.Brand>
         </Container>
       </Navbar>

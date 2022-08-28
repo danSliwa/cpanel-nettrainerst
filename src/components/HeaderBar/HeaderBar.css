@@ -60,7 +60,9 @@
     flex: 0.8;
     margin: auto;
     font-family: AnitaSemiSquare;
-    margin-top: 18px;
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: bold;
     animation: shine 6s linear infinite;
     background: linear-gradient(to right, green 20%, #fbcd16 40%, green 60%, #fbcd16 80%);
     background-size: 200% auto;
@@ -75,6 +77,7 @@
     position: sticky;
     flex: 0.8;
     margin: auto;
+    font-weight: bold;
     font-family: AnitaSemiSquare;
     margin-top: 18px;
     animation: shine 6s linear infinite;

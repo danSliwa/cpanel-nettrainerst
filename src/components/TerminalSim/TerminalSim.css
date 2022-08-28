@@ -1,20 +1,33 @@
+.NOCLASS {
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+    border-radius: 10px;
+}
 .Refresh-div {
     background-color: transparent;
+    border-color: transparent;
+    border-radius: 10px;
 }
 .Refresh-button {
     background-color: transparent;
     color: green;
     transition-duration: 1s;
     border-color: transparent;
+    border-radius: 10px;
 }
 .Refresh-button:hover {
     color: black;
+    border-color: transparent;
     transition-duration: 1s;
     animation: rotate-center 1s;
+    border-radius: 10px;
 }
 .Refresh-button::after {
     height: 60px;
     width: 60px;
+    border-color: transparent;
+    border-radius: 10px;
 }
 .Refreshing {
     color: green;
@@ -24,6 +37,8 @@
     background: transparent;
     width: 100px;
     height: 100px;
+    border-color: transparent;
+    border-radius: 10px;
 }
 
 .rotate-center {

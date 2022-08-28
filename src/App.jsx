@@ -19,7 +19,11 @@ import { useState } from 'react';
 import { BsTerminalFill } from 'react-icons/bs';
 import OffCanvasConsole from './components/OffCanvasConsole/OffCanvasConsole';
 import MainMQTT from './core/MainMQTT';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import Logo from './assets/images/nettrainer_logo_smaller.png'
 const mqttData = require('./assets/MQTT_Topics');
+const connectionStatuses = require('./store/ConnectionStatusOptions');
 
 
 
@@ -28,7 +32,19 @@ function App(state) {
   const [log, setLog] = useState('');
   const appClient = MainMQTT();
   appClient.subscribe(mqttData.LOG_TRANSFER.logTopic);
-  appClient.on('message', (topic, payload, packet) => { setLog(payload.toString()); console.log(`ON: ${payload}`); });
+  appClient.on('message', (topic, payload, packet) => { setLog(payload.toString()); });
+
+  const [grayOutButton, setGrayOutButton] = useState(false);
+  const connStatus = useSelector(state => state.connectionStatus.connectionStatus);
+
+  useEffect(() => {
+    console.log("USEEFFECT: ", connStatus);
+    if (connStatus === connectionStatuses.CONNECTED) {
+      setGrayOutButton(true);
+    } else {
+      setGrayOutButton(false);
+    }
+  }, [connStatus])
 
   const onShowTerminalButtonClick = () => {
     appClient.publish('LOG', 'turnOn');
@@ -38,10 +54,13 @@ function App(state) {
   return (
     <>
       <header className='Header'>
-        <HeaderBar client={appClient}/>
+        <HeaderBar client={appClient} />
       </header>
       <body className="App">
         <div className='Background-stack'>
+          <div>
+            <img src={Logo} alt="BigCo Inc. logo" className='Big-logo'/>
+          </div>
           <div className='Animated-bg'></div>
           <div className='Static-bg'></div>
           <div className='App-body'>
@@ -60,8 +79,14 @@ function App(state) {
                 <Route path='*' element={<Navigate to='/menu' />} />                     {/* Switch to menu Route if wrong Route is somehow entered*/}
               </Routes>
             </Router>
+
             {/* OffCanvas Terminal part */}
-            <button className='Terminal-button' onClick={onShowTerminalButtonClick}><BsTerminalFill className='Terminal-icon' /></button>
+            <button
+              className={grayOutButton ? 'Terminal-button' : 'Terminal-button-disabled'}
+              onClick={onShowTerminalButtonClick}
+            >
+              <BsTerminalFill className='Terminal-icon' />
+            </button>
             {showTerminal && <OffCanvasConsole show={showTerminal} setShow={setShowTerminal} log={log} client={appClient} />}
           </div>
         </div>

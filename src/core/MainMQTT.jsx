@@ -4,7 +4,7 @@ const PI_URL = 'mqtt://192.168.1.125:9001/'; // Static IP of Raspberry PI device
 
 function MainMQTT() {   
     try { 
-        var client = mqtt.connect(PI_URL); // MQTT client
+        var client = mqtt.connect(PI_URL, {keepalive: 5000}); // MQTT client
         client.on('connect', (error) => console.log("Connected to Raspberry PI (MainMQTT)."));
     } catch (error) {
         console.log(error);

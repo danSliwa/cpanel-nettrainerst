@@ -4,6 +4,12 @@
     margin: 0 auto;
 }
 
+.Offcanvas-header {
+    text-align: center;
+    color: black;
+    margin: 0 auto;
+}
+
 .Offcanvas {
     height: 30em;
 }

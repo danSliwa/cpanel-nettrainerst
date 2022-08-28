@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import modulePicked from './modulePicked_reducer'
+import connectionStatus from "./connectionStatus_reducer";
 
 const rootReducer = combineReducers({
-    modulePicked
+    modulePicked,
+    connectionStatus
 });
 
 export default rootReducer;

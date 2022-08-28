@@ -16,7 +16,7 @@ function OffCanvasConsole({ show, setShow, log, client }) {
         <Offcanvas.Body className='Offcanvas-body'>
           <div className='text'>
             <p>WARNING! This terminal is a mirror! It doesn't act as actual terminal. For help, type in: </p>
-            <p className='command'>commands</p>
+            <p className='command'>help</p>
           </div>
 
           <TerminalSim log={log} client={client} />

@@ -32,18 +32,19 @@ function TerminalSim({ log, client }) {
         <>
             <br />
             <div className='Refresh-div'>
-                <button className={isVisible ? 'Refresh-button' : 'Refresh-button'} onClick={onRefreshClick} >
+                <button className={isVisible ? 'Refresh-button' : 'NOCLASS'} onClick={onRefreshClick} >
                     {isVisible ?
                         <FiRefreshCcw />
                         :
                         <>
-                            <FiRefreshCcw className={isVisible ? '' : 'Refreshing'} />
-                            <h1 style={{color: 'green'}}>REFRESHING...</h1>
+                            <br /><br /><br /><br /><br /><br /> {/*{Sorry I was lazy}*/}
+                            <FiRefreshCcw className={isVisible ? 'NOCLASS' : 'Refreshing'} />
+                            <h1 style={{ color: 'green' }}>REFRESHING...</h1>
                         </>
                     }
                 </button>
             </div>
-            {log && isVisible &&
+            {isVisible &&
                 <Terminal
                     color='green'
                     backgroundColor='black'
@@ -51,8 +52,14 @@ function TerminalSim({ log, client }) {
                     style={{ fontWeight: "bold", fontSize: "1em" }}
                     commands={{
                         popup: () => alert("Terminal in React!"),
-                        commands: () => alert("List of available commands: commands, popup, ntst"),
-                        ntst: () => { sendCommandToTerminal() }
+                        ntst: () => { sendCommandToTerminal() },
+                        REFRESH_BUTTON: () => { onRefreshClick() }
+                    }}
+                    descriptions={{
+                        popup: 'Test alert.',
+                        ntst: 'ADVANCED: Input any command to NET-TRAINER-ST',
+                        show: 'Show the latest terminal log from NET-TRAINER-ST',
+                        REFRESH_BUTTON: 'Sometimes the output command does not load, hit the refresh button above terminal to reload'
                     }}
                     msg={log}
                 >
