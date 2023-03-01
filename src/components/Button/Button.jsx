@@ -3,7 +3,6 @@ import { AiOutlineQuestionCircle } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux';
 import { setModulePicked } from '../../store/actions';
 import HelpModal from '../HelpModal/HelpModal';
-
 import './Button.css'
 const modules = require('../../store/ModuleOptions');
 
@@ -34,6 +33,7 @@ function Button(props) {
         if (props.module === modules.none) {
             setDisableButton(false);
             pickNewModule(modules.none);
+            console.log("Testing MQTT connection... Look for WORKED folder on device Desktop.");
         }
     }
 

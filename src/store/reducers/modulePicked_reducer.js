@@ -19,6 +19,9 @@ export default function (state = INITIAL_STATE, action) {
             const foundOption = arrayToCheck.includes(action.payload.modulePicked);
             if (foundOption) {
                 console.log(`New module picked ${action.payload.modulePicked}`);
+                if (action.payload.modulePicked === 'none') {
+                    console.log(`Resetting the device...`);
+                }
                 return action.payload;
             } else {
                 throw new Error(`Cannot find action type with ${action.payload.modulePicked}`);

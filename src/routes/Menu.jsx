@@ -20,7 +20,7 @@ function Menu({ client }) {
     });
 
     useEffect(() => {
-        console.log("USEEFFECT: ", connStatus);
+        console.log("Connection Status Received: ", connStatus);
         if (connStatus === connectionStatuses.CONNECTED) {
             setShowMenu(true);
         } else {

@@ -25,12 +25,14 @@ import {ReactComponent as Logo} from './assets/images/ntst_logo.svg'
 const mqttData = require('./assets/MQTT_Topics');
 const connectionStatuses = require('./store/ConnectionStatusOptions');
 
-
+const appClient = MainMQTT(); // Main MQTT client, it is then drilled through props
 
 function App(state) {
   const [showTerminal, setShowTerminal] = useState(false);
   const [log, setLog] = useState('');
-  const appClient = MainMQTT();
+
+  
+
   appClient.subscribe(mqttData.LOG_TRANSFER.logTopic);
   appClient.on('message', (topic, payload, packet) => { setLog(payload.toString()); });
 
@@ -38,7 +40,6 @@ function App(state) {
   const connStatus = useSelector(state => state.connectionStatus.connectionStatus);
 
   useEffect(() => {
-    console.log("USEEFFECT: ", connStatus);
     if (connStatus === connectionStatuses.CONNECTED) {
       setConnectedToNTST(true);
     } else {

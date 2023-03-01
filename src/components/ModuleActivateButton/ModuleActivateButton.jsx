@@ -30,22 +30,19 @@ function ModuleActivateButton(props) {
         } catch (error) {
             console.warn(`No additional onClick function passed to ModuleActivateButton as props in ${module} Button.`);
         }
-
         if (moduleActive) {
             pickNewModule('none');
             props.client.publish(module, mqttData.RESET_TO_DEFAULT.turnOn);
             changeButtonActiveState();
         }
-
         if (modulePicked === 'none') {
             if (!(modulePicked === module)) {
                 pickNewModule(module);
                 props.client.publish(module, 'turnOn')
+                console.log(`Publishing ${module} to MQTT...`);
                 changeButtonActiveState();
             }
         }
-
-
     }
 
     return (
