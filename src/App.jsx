@@ -21,7 +21,7 @@ import OffCanvasConsole from './components/OffCanvasConsole/OffCanvasConsole';
 import MainMQTT from './core/MainMQTT';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Logo from './assets/images/nettrainer_logo_smaller.png'
+import {ReactComponent as Logo} from './assets/images/ntst_logo.svg'
 const mqttData = require('./assets/MQTT_Topics');
 const connectionStatuses = require('./store/ConnectionStatusOptions');
 
@@ -34,15 +34,15 @@ function App(state) {
   appClient.subscribe(mqttData.LOG_TRANSFER.logTopic);
   appClient.on('message', (topic, payload, packet) => { setLog(payload.toString()); });
 
-  const [grayOutButton, setGrayOutButton] = useState(false);
+  const [connectedToNTST, setConnectedToNTST] = useState(false);
   const connStatus = useSelector(state => state.connectionStatus.connectionStatus);
 
   useEffect(() => {
     console.log("USEEFFECT: ", connStatus);
     if (connStatus === connectionStatuses.CONNECTED) {
-      setGrayOutButton(true);
+      setConnectedToNTST(true);
     } else {
-      setGrayOutButton(false);
+      setConnectedToNTST(false);
     }
   }, [connStatus])
 
@@ -59,7 +59,7 @@ function App(state) {
       <body className="App">
         <div className='Background-stack'>
           <div>
-            <img src={Logo} alt="BigCo Inc. logo" className='Big-logo'/>
+            <Logo className={connectedToNTST ? 'Big-logo' : 'Big-logo-offline'}/>
           </div>
           <div className='Animated-bg'></div>
           <div className='Static-bg'></div>
@@ -82,7 +82,7 @@ function App(state) {
 
             {/* OffCanvas Terminal part */}
             <button
-              className={grayOutButton ? 'Terminal-button' : 'Terminal-button-disabled'}
+              className={connectedToNTST ? 'Terminal-button' : 'Terminal-button-disabled'}
               onClick={onShowTerminalButtonClick}
             >
               <BsTerminalFill className='Terminal-icon' />

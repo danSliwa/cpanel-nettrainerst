@@ -4,13 +4,11 @@
 }
 
 .MenuButtons {
-    background-color: red;
     height: 500px;
 }
 .Box{
     display: flex;
     flex-direction: column;
-    background-color: red;
 }
 .Not-connected {
     font-family: GoodTimes;
@@ -18,8 +16,8 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-size: 50px;
     flex: 0;
-    margin: 50 auto;
-    margin-top: 250px;
+    margin: 10 auto;
+    margin-top: 80px;
 }
 
 .Not-connected-info {
