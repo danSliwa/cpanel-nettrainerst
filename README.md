@@ -1,4 +1,6 @@
-https://user-images.githubusercontent.com/73396189/223204613-d78734b3-364c-46e1-810c-bedebea0e76c.mp4
+https://user-images.githubusercontent.com/73396189/223247825-ffce9758-d001-44a3-b490-165d2e4ad1c3.mp4
+
+
 
 # Control Panel App for NET-TRAINER-ST
 
